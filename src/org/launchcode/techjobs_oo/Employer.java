@@ -21,6 +21,8 @@ public class Employer {
 
     @Override
     public String toString() {
+        if(value=="")
+            this.value="Data not avaliable";
         return value;
     }
 

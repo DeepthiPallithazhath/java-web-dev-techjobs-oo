@@ -46,8 +46,36 @@ public class Job {
         return Objects.hash(id);
     }
 
+    @Override
+    public String toString() {
 
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
+        if ((name == "") && (employer.toString()== "Data not avaliable") && (location.toString() == "Data not avaliable") && (positionType.toString() == "Data not avaliable") && (coreCompetency.toString() =="Data not avaliable"))
+
+            return "OOPS! This job does not seem to exist.";
+        else {
+            if(name=="")
+                this.name="Data not avaliable";
+            if(id==0) {
+                return "\n" +
+                        " ID: " + "Data not avaliable" +
+                        "\n Name: " + name +
+                        "\n Employer: " + employer +
+                        "\n Location: " + location +
+                        "\n PositionType: " + positionType +
+                        "\n CoreCompetency: " + coreCompetency +
+                        "\n";
+            }
+            return "\n" +
+                    " ID: " + id +
+                    "\n Name: " + name +
+                    "\n Employer: " + employer +
+                    "\n Location: " + location +
+                    "\n PositionType: " + positionType +
+                    "\n CoreCompetency: " + coreCompetency +
+                    "\n";
+        }
+    }
+// TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
     public int getId() {
@@ -73,6 +101,7 @@ public class Job {
     public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
+
 
     public void setName(String name) {
         this.name = name;

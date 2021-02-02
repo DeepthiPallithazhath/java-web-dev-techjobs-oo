@@ -23,6 +23,8 @@ public class Location {
 
     @Override
     public String toString() {
+        if(value=="")
+            this.value="Data not avaliable";
         return value;
     }
 
